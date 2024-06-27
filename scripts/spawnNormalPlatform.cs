@@ -5,17 +5,17 @@ using UnityEngine;
 public class spawnNormalPlatform : MonoBehaviour
 {
     public GameObject normalPlatformPrefab;
-    public int maxNormalPlatform = 5;
-    public double timeSpawn = 2;
+    public int maxNormalPlatform;
+    public double timeSpawn;
     private double timer;
 
     private float minimX = -2f;
-    private float maximX = 5f;
+    private float maximX = 4f;
 
     void Start()
     {
         timer = timeSpawn;
-        GenerateChunk(-2f, 5f); 
+        GenerateChunk(minimX, maximX); 
     }
     void GenerateChunk(float minX, float maxX)
     {
@@ -30,17 +30,13 @@ public class spawnNormalPlatform : MonoBehaviour
         }
     }
 
-
-    void Update()
+        void Update()
     {
         timer -= Time.deltaTime;
          if (timer <= 0) 
          {
              timer = timeSpawn;
-             if (transform.childCount < maxNormalPlatform)
-             {
-                GenerateChunk(minimX, maximX);
-             }
+             GenerateChunk(minimX, maximX);
          }
             
     }

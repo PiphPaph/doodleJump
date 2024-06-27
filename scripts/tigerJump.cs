@@ -18,7 +18,7 @@ public class tigerJump : MonoBehaviour
         if (collision.gameObject.tag == "tiger")
         {
             onPlatform = true;
-            Debug.Log(onPlatform);
+            
         }
     }
     private void OnCollisionExit2D(Collision2D collision) 
@@ -26,7 +26,7 @@ public class tigerJump : MonoBehaviour
         if (collision.gameObject.tag == "tiger")
         {
             onPlatform = false;
-            Debug.Log(onPlatform);
+           
         }
     }
     

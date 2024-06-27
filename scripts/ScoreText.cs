@@ -16,6 +16,6 @@ public class ScoreText : MonoBehaviour
     void Update()
     {
         scoreText.text = $"Score: {Score.score}";
-        Debug.Log(scoreText.text);
+        
     }
 }
