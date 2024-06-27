@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalPlatformPrefab: {fileID: 2835650191114588415, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-  maxNormalPlatform: 1
-  timeSpawn: 0.55
+  maxNormalPlatform: 2
+  timeSpawn: 0.34
 --- !u!1 &361648467
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,32 +538,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &434988139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2835650191114588415, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-  m_PrefabInstance: {fileID: 1147878491}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &434988142
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434988139}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1.2986431, y: 0.01885891, z: 1}
-  m_Center: {x: 0.4818535, y: 0.8485198, z: 0}
 --- !u!1 &473119627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,14 +1164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1026667079750222253, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1026667079750222253, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-      propertyPath: m_Constraints
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2683779752024674938, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.89
@@ -1242,25 +1208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: normalPlatformPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4867734266128754141, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-      propertyPath: m_Drag
-      value: 3.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 5215524971809755029, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5215524971809755029, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-      propertyPath: m_EdgeRadius
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2835650191114588415, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 434988142}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
 --- !u!1 &1181033606
 GameObject:
@@ -1545,6 +1496,7 @@ GameObject:
   - component: {fileID: 1227179006}
   - component: {fileID: 1227179005}
   - component: {fileID: 1227179009}
+  - component: {fileID: 1227179014}
   - component: {fileID: 1227179008}
   - component: {fileID: 1227179010}
   - component: {fileID: 1227179011}
@@ -1696,9 +1648,9 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3412326, y: -3.2856352}
+  m_Offset: {x: -0.3412326, y: -3.329289}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1709,8 +1661,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7538785, y: 0.12825155}
-  m_EdgeRadius: 0.03
+  m_Size: {x: 0.7538785, y: 0.21555924}
+  m_EdgeRadius: 0
 --- !u!114 &1227179010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,6 +1699,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f5b4d1942233d4399819a131a949e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!251 &1227179014
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227179003}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 180
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1326052717
 GameObject:
   m_ObjectHideFlags: 0
