@@ -6,10 +6,25 @@ using UnityEngine.UI;
 
 public class RestartGameButton : MonoBehaviour
 {
+    public bool clicked = false;
+
     public void RestartGameButtonClick()
     {
         SceneManager.LoadScene("mainGame");
         Score.score = 0;
-        Debug.Log("presset");
+    }
+    public void isButtonClicked()
+    {
+        clicked = true;
+
+    }
+    void Update() 
+    {
+        if (clicked)
+        {
+            RestartGameButtonClick();
+            clicked = false;
+            
+        }
     }
 }

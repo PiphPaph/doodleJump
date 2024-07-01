@@ -8,6 +8,7 @@ public class tigerJump : MonoBehaviour
 {
     private bool onPlatform;
     private GameObject Tiger;
+    private float maxSpeed = 15f;
 
     void Start() 
     {
@@ -35,6 +36,10 @@ public class tigerJump : MonoBehaviour
         if (onPlatform == true) 
         {
            Tiger.GetComponent<Rigidbody2D>().AddForce(transform.up * 15f, ForceMode2D.Impulse);
+            if(Tiger.GetComponent<Rigidbody2D>().velocity.magnitude > maxSpeed) 
+            {
+                Tiger.GetComponent<Rigidbody2D>().velocity = Tiger.GetComponent<Rigidbody2D>().velocity.normalized * maxSpeed;
+            }
         }
         
     }
