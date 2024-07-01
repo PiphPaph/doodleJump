@@ -1291,7 +1291,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 818286064}
         m_TargetAssemblyTypeName: RestartGameButton, Assembly-CSharp
-        m_MethodName: RestartGameButtonClick
+        m_MethodName: isButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1351,6 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382acd79e8bbd5a4881ceff7f9fc2885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicked: 0
 --- !u!1 &848785661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1725,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9115699022878504935, guid: cbb0c7d93049855468633b7f99feb77f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1972,7 +1977,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.49
-  m_AngularDrag: 0
+  m_AngularDrag: 0.66
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1983,7 +1988,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1227179006
 SpriteRenderer:
@@ -2777,7 +2782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5100021, y: 0.40999985}
+  m_AnchoredPosition: {x: -2.5100098, y: 0.40999985}
   m_SizeDelta: {x: -5.03, y: -9.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872520291

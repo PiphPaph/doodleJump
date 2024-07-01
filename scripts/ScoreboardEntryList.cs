@@ -4,8 +4,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class ScoreboardEntry //: MonoBehaviour
+public class ScoreboardEntryList //: MonoBehaviour
 {
-    public string playerName;
-    public int playerScore;
+    public List<ScoreboardEntry> entryList;
 }
