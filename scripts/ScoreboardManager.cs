@@ -1,38 +1,43 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
+
 
 
 public class ScoreboardManager : MonoBehaviour
 {
-    //public List<ScoreboardEntry> entries;
+    
     public ScoreboardEntryList entries;
-    public ScoreboardEntryList x;
-
     private string filePath;
+    
+    public Text scoreTextPrefab; // Префаб текста для отображения счета
+    public GameObject scoreboardPanel; // Панель для размещения текстовых элементов
 
     void Start() 
     {
+        Debug.Log("старт");
         filePath = Path.Combine(Application.persistentDataPath, "scoreboard.json");
         LoadScoreboard();
-        /*x = new ScoreboardEntryList();
-        x.entryList = new List<ScoreboardEntry>();
-        x.entryList.Add(new ScoreboardEntry { playerName = "sdsdggds", playerScore = 322 });
-        x.entryList.Add(new ScoreboardEntry { playerName = "123123", playerScore = 1231232 });
-        x.entryList.Add(new ScoreboardEntry { playerName = "������������", playerScore = 228 });
-        Debug.Log(JsonUtility.ToJson(x));*/
     }
 
     public void LoadScoreboard() 
     {
+
         if (File.Exists(filePath)) 
         {
-            string json = File.ReadAllText(filePath);
+            var json = File.ReadAllText(filePath);
             entries = JsonUtility.FromJson<ScoreboardEntryList>(json);
+            for (int i = 0; i < entries.entryList.Count; i++)
+            {
+
+                var scoreText = Instantiate(scoreTextPrefab, scoreboardPanel.transform);
+                scoreText.text = $"{entries.entryList[i].playerName}: {entries.entryList[i].playerScore}";
+            }
         }
         else 
         {
+
             entries = new ScoreboardEntryList();
             entries.entryList = new List<ScoreboardEntry>();
         }
@@ -42,8 +47,6 @@ public class ScoreboardManager : MonoBehaviour
     {
         string json = JsonUtility.ToJson(entries);
         File.WriteAllText(filePath, json);
-        Debug.Log(json);
-
     }
 
     public void SortScoreboard() 
@@ -69,7 +72,6 @@ public class ScoreboardManager : MonoBehaviour
     public void AddNewScoreEntry(string playerName, int score) 
     {
         entries.entryList.Add(new ScoreboardEntry { playerName = playerName, playerScore = score });
-        SortScoreboard();
-        SaveScoreboard();
+        
     }
 }

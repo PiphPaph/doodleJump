@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
         string playerName = playerNameInput.text;
         int playerScore = Score.score;
 
+       
         scoreboardManager.AddNewScoreEntry(playerName, playerScore);
+        scoreboardManager.UpdateScore(playerName, playerScore);
     }
 }
