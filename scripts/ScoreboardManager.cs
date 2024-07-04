@@ -16,7 +16,6 @@ public class ScoreboardManager : MonoBehaviour
 
     void Start() 
     {
-        Debug.Log("старт");
         filePath = Path.Combine(Application.persistentDataPath, "scoreboard.json");
         LoadScoreboard();
     }
@@ -28,6 +27,12 @@ public class ScoreboardManager : MonoBehaviour
         {
             var json = File.ReadAllText(filePath);
             entries = JsonUtility.FromJson<ScoreboardEntryList>(json);
+            
+            while (entries.entryList.Count > 10)
+            {
+                entries.entryList.RemoveAt(entries.entryList.Count - 1);
+            }
+            
             for (int i = 0; i < entries.entryList.Count; i++)
             {
 
@@ -65,6 +70,7 @@ public class ScoreboardManager : MonoBehaviour
         {
             entries.entryList.Add(new ScoreboardEntry { playerName = playerName, playerScore = newScore });
         }
+        
         SortScoreboard();
         SaveScoreboard();
     }
